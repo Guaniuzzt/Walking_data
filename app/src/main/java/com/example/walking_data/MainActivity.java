@@ -144,7 +144,6 @@ public class MainActivity extends Activity implements SensorEventListener {
     }
 
     private void writedown() throws IOException {
-
         if (ax.size() >= TIME_STAMP && ay.size() >= TIME_STAMP && az.size() >= TIME_STAMP
                 && gx.size() >= TIME_STAMP && gy.size() >= TIME_STAMP && gz.size() >= TIME_STAMP
                 && hr.size() >= TIME_STAMP) {
@@ -163,7 +162,7 @@ public class MainActivity extends Activity implements SensorEventListener {
                 data[j++] = String.valueOf(gx.get(i));
                 data[j++] = String.valueOf(gy.get(i));
                 data[j++] = String.valueOf(gz.get(i));
-                data[j] = "0";
+                data[j] = "1";    //"1" for walking
                 writecsv(filename, data);
             }
 
